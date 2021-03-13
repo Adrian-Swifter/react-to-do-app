@@ -1,0 +1,21 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.todos_wrapper {
+  padding: 0;
+}
+
+.todos_wrapper li {
+  list-style: none;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
+
+.strike {
+  text-decoration: line-through;
+}
