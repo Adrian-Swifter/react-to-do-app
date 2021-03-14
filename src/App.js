@@ -26,7 +26,22 @@ export default function App() {
     setTodos(newTodos);
   };
 
-  
+  const editTodo = (id, e) => {
+    setValue(e.target.parentElement.firstElementChild.textContent);
+    localStorage.setItem("id", id);
+    e.target.nextElementSibling.classList.toggle("show");
+  };
+
+  const handleEditSubmit = (id, e) => {
+    e.preventDefault();
+    setValue("");
+    let editedTodos = [...todos];
+    editedTodos.splice(JSON.parse(localStorage.getItem("id")), 1, value);
+    setTodos(editedTodos);
+    e.target.classList.toggle("show");
+    localStorage.removeItem("id");
+  };
+
   return (
     <div className="App">
       <h1>Basic To Do App</h1>
@@ -40,6 +55,8 @@ export default function App() {
       <Main
         todos={todos}
         deleteTodo={deleteTodo}
+        edit={editTodo}
+        editSubmit={handleEditSubmit}
       />
     </div>
   );

@@ -19,3 +19,20 @@
 .strike {
   text-decoration: line-through;
 }
+
+.edit_button {
+  color: gold;
+  cursor: pointer;
+}
+
+.submit_edit {
+  display: none;
+}
+
+.hide {
+display: none;
+}
+
+.show {
+  display: inline-block;
+}
